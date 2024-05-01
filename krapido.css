@@ -1,74 +1,191 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.conteiner {
-    background-color: black;
-    width: 100vw;
-    height: 100vh;
-}
-header {
-    background-color: white;
-    width: 100%;
-    padding: 10px 70px;
-    display: flex;
-    position: fixed;
-    top: 0;
-    border-top: 2px solid #c14599;
-    border-bottom: 2px solid #c14599;
-}
-header img {
-    width: 7%;
-    height: 50px;
-    margin-right: 23%;
-}
-header ul {
-    width: 80%;
-    display: flex;
-    gap: 100px;
+    font-family: 'Poppins', sans-serif;
     list-style: none;
-    background: #c1459a7b;
-    border-radius: 25px;
-}
-header ul li {
-    padding: 15px;
-    margin-left: 30px;
-}
-header a {
     text-decoration: none;
-    color: black;
-    font-weight: bolder;
 }
-ul .primeiro {
-    margin-left: 100px;
+:root {
+    --pink: #c14599;
+    --whrit: #fff;
+    --dark: #1e1c2a;
 }
- section{
-    margin-top: 100px;
+body {
+    color: var(--dark);
+    background-color: var(--whrit);
+}
+.navegador {
     display: flex;
-    justify-content: start;
-    background-image: url(./img/imgexacta.jpg);
-    background-position: top center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    box-shadow: 0 0.1rem 0.5rem #ccc;
+    width: 100%;
+    background-color: var(--whrit);
+    transition: all 0.5s;
+    position: fixed;
+} 
+.navegador .logo {
+    color: var(--pink);
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.logo span {
+    color: var(--dark);
+}
+.navegador ul {
+    display: flex;
+    align-items: center;
+    gap: 5rem
+    ;
+}
+.navegador ul li a {
+    color: var(--dark);
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+.navegador ul li a:hover {
+    color: var(--pink);
+}
+.navegador i {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.menu {
+    cursor: pointer;
+    display: none;
+}
+.menu .bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border: 3px;
+    background-color: var(--dark);
+    margin: 5px auto;
+    transition: 0.3s all;
+}
+.menu .bar:nth-child(1), .menu .bar:nth-child(3) {
+    background-color: var(--pink);
+}
+.home {
+    background-image: url(./img/nova2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
-    height: 100%;
+    background-position: top center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
 }
-section .caixa {
-    background-image: linear-gradient(to right, #c14599, transparent);
-    margin: 30px 0px 90px 100px;
+.home_text {
+    width: 37rem;
 }
-section .conteudo {
-    margin: 70px 0px 0px 140px;
-    width: 500px;
-    height: 250px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.623);
-   
+.home_text .text_h4 {
+    font-size: 1rem;
+    color: var(--pink);
+    margin-bottom: 1rem;
 }
-.conteudo h1 {
-    color: black;
-    text-align: center;
+.home_text .text_h1 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
     
+}
+.home_text p {
+    margin-bottom: 2rem;
+}
+.home_btn {
+    padding: 15px 45px;
+    background-color: var(--pink);
+    color: var(--whrit);
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all 0.5s;
+    margin: 20px;
+    transform: translateX(110px);
+}
+.home_btn:hover {
+    background-color: #fc4c35;
+}
+.home .redes_socias{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    cursor: pointer;
+    margin: 10px 0px 10px 13rem;
+}
+.redes_socias a {
+    background: transparent;
+    color: #c14599;
+    padding: 10px;
+    font-size:30px;
+    margin: 10px;
+}
+@media (max-width:785px) {
+    .navegador{
+        padding: 18px 20px;
+    }
+    .menu{
+        display: block;
+    }
+    .menu.ativo .bar:nth-child(1){
+        transform:  translateY(8px) rotate(45deg);
+    }
+    .menu.ativo .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu.ativo .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav_logo {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background: var(--white);
+        gap: -10px;
+        transition: 0.3s;
+    }
+    .nav_logo.ativo{
+        right: 0;
+    }
+    .nav_item{
+        margin: 16px 0;
+    }
+    .nav_item {
+        margin: 16px 0;
+    }
+    /*main*/
+    .home{
+        padding: 100px 2%;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+        gap: 5rem;
+    }
+    .home .text_h4{
+        font-size: 15px;
+    }
+    .home .text_h1{
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    .home p{
+        font-size: 15px;
+    }
+    .home_img{
+        width: 125%;
+    }
 }
