@@ -112,6 +112,7 @@ body {
 }
 .home_btn:hover {
     background-color: #fc4c35;
+    cursor: pointer;
 }
 .home .redes_socias{
     height: 40px;

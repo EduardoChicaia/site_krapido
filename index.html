@@ -18,7 +18,7 @@
                 <li class="nav_item"><a href="#">Home</a></li>
                 <li class="nav_item"><a href="#">Sobre nós</a></li>
                 <li class="nav_item"><a href="#">Serviços</a></li>
-                <li class="nav_item"><a href="#">Contact</a></li>
+                <li class="nav_item"><a href="#">Contacto</a></li>
                 <i class='bx bx-search'></i>
             </ul>
             <div class="menu">
@@ -41,10 +41,12 @@
                     <a href="#"><i class="fa-brands fa-dribbble"></i></a>
                     <a href="#"><i class="fa-brands fa-behance"></i></a>
                 </div>
-                <button class="home_btn" id="modal">Fale connosco</button>
+                <button class="home_btn" onclick="openModal ()">Fale connosco</button>
             </div>
-            <aside class="modal_container">
-                <div class="modal">
+
+
+            <aside class="modal_container" id="modal_container">
+                <div class="modal" id="modal">
                     <div class="identi">
                         <div class="icons">
                             <i class="bi bi-geo-alt">LOCALIZAÇÃO</i>
@@ -61,7 +63,7 @@
                     </div>
                     <div class="formulario">
                         <form class="form">
-                            <span class="X" draggable="true" onclick="closeModal()">&times</span>
+                            <span class="X" draggable="true" id="close">&times</span>
                             <fieldset class="caixa"> 
                                 <legend class="top"><h2>FALE CONNOSCO</h2></legend>
                                  <input type="text" name="nome" id="nome" placeholder="  Nome">
@@ -78,5 +80,8 @@
             </aside>
         </section>
     </main>
+
+    <script src="krapido.js"></script>
 </body>
+
 </html>
